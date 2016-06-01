@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset= "utf-8">
+	<meta name="author" content="A Little Dream">
+	<meta name="description" content = "">
+	<link rel="stylesheet" type="text/css" href="static/materialize/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="static/fa/css/font-awesome.min.css">
+	<title>Homepage | A Little Dream</title>
+</head>
+<body>
+<header>
+	<div class = "container">
+		<a href="#" data-activates="nav-mobile" class="hide-on-large-only" >
+			<i>menu</i>
+		</a>
+	</div>
+	<ul id = "nav-mobile" class="side-nav fixed" style="transform:translateX(0%);display:none;">
+		<a id = "logo-container" href="#" class="brand-logo">
+			<img src="static/images/logo.jpg"/>
+		</a>
+		<li class = "bold">
+			<a href="index.html" class="waves-effect waves-grey">Home</a>
+		</li>
+		<li class = "bold">
+			<a href="about.html" class="waves-effect waves-grey">About</a>
+		</li>
+		<li class = "bold">
+			<a class="collapsible-header waves-effect waves-grey">Products</a>
+			<div class="collapsible-body">
+				<ul>
+					<li>
+						<a href="#">Shoe</a>
+					</li>
+					<li>
+						<a href="#">Accessories</a>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li class = "bold">
+			<a class="waves-effect waves-grey" href="contact.html">Contact</a>
+		</li>
+	</ul>
+</header>
+<main>
+	<div class="row">
+		<div class="col l4 m12 s12" >
+			<div class="grid grid-full-height" id = "grid-1">
+				<a href="#">
+					<div class="bg-image" style ="background-image: url(static/images/1.jpg); ">
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="col l8 m12 s12">
+			<div class="grid grid-half-height" id = "grid-2">
+				<a href="#">
+				<div class="bg-image" style ="background-image: url(static/images/2.jpg); " >
+				</div>
+				</a>
+			</div>
+			<div class="grid grid-half-height" id = "grid-2">
+				<a href="#">
+				<div class="bg-image" style ="background-image: url(static/images/3.jpg); ">
+				</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</main>
+</body>
+<script type = "text/javascript" src="static/js/jquery.min.js"></script>
+<script type="text/javascript" src="static/materialize/js/materialize.min.js"></script>

@@ -9,6 +9,8 @@
 	<link rel="stylesheet" type="text/css" href="/static/materialize/css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
 	<link rel="stylesheet" type="text/css" href="/static/fa/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="/static/css/magnific-popup.css">
 	<title>Homepage | A Little Dream</title>
 </head>
 <body>
@@ -78,17 +80,19 @@
 </header>
 <main>
 	<div class="content">
-		<div class="row">
-			<div class="grid col l6 m12 s12">
-				<a href="/shoes/" style="background-image:url(/static/images/1.jpg)" class="valign-wrapper">
-					<h4 class="valign">Shoes</h4>
-				</a>
-			</div>
-			<div class="grid col l6 m12 s12">
-				<a href="/accessories/" style="background-image:url(/static/images/5.jpg)" class="valign-wrapper">
-					<h4 class="valign">Accessories</h4>
-				</a>
-			</div>
+		<ul class="tiles-wrap animated" id="lookbook">
+			<li><a href="/static/images/1.jpg"><img src="/static/images/1.jpg" class="responsive-img"></a></li>
+			<li><a href="/static/images/5.jpg"><img src="/static/images/5.jpg" class="responsive-img"></a></li>
+			<li><a href="/static/images/3.jpg"><img src="/static/images/3.jpg" class="responsive-img"></a></li>
+			<li><a href="/static/images/2.jpg"><img src="/static/images/2.jpg" class="responsive-img"></a></li>
+			<li><a href="/static/images/4.jpg"><img src="/static/images/4.jpg" class="responsive-img"></a></li>
+			<li><a href="/static/images/6.jpg"><img src="/static/images/6.jpg" class="responsive-img"></a></li>
+			<li><a href="/static/images/1.jpg"><img src="/static/images/1.jpg" class="responsive-img"></a></li>
+			<li><a href="/static/images/5.jpg"><img src="/static/images/5.jpg" class="responsive-img"></a></li>
+			<li><a href="/static/images/3.jpg"><img src="/static/images/3.jpg" class="responsive-img"></a></li>
+			<li><a href="/static/images/2.jpg"><img src="/static/images/2.jpg" class="responsive-img"></a></li>
+			<li><a href="/static/images/4.jpg"><img src="/static/images/4.jpg" class="responsive-img"></a></li>
+			<li><a href="/static/images/6.jpg"><img src="/static/images/6.jpg" class="responsive-img"></a></li>
 		</div>
 	</div>
 </main>
@@ -97,6 +101,9 @@
 </body>
 <script type = "text/javascript" src="/static/js/jquery.min.js"></script>
 <script type="text/javascript" src="/static/materialize/js/materialize.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.wookmark.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.imagesloaded.js"></script>
 <script type="text/javascript">
   $('.button-collapse').sideNav({
       menuWidth: 240, // Default is 240
@@ -104,4 +111,39 @@
       closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
     }
   );
+</script>
+<script type="text/javascript">
+(function ($) {
+  // Prepare layout options.
+  var wookmark;
+  // Init lightbox
+  $('#lookbook').magnificPopup({
+    delegate: 'li a',
+    type: 'image',
+    mainClass: 'mfp-with-zoom',
+	zoom: {
+	    enabled: true, // By default it's false, so don't forget to enable it
+
+	    duration: 300, // duration of the effect, in milliseconds
+	    easing: 'ease-in-out', // CSS transition easing function
+
+	    // The "opener" function should return the element from which popup will be zoomed in
+	    // and to which popup will be scaled down
+	    // By defailt it looks for an image tag:
+	    opener: function(openerElement) {
+	      // openerElement is the element on which popup was initialized, in this case its <a> tag
+	      // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+	      return openerElement.is('img') ? openerElement : openerElement.find('img');
+	    }
+	 }
+  });
+  // Call the layout function after all images have loaded
+  imagesLoaded('#lookbook', function () {
+    wookmark = new Wookmark('#lookbook', {
+      offset: 5, // Optional, the distance between grid items
+      itemWidth: 230 // Optional, the width of a grid item
+    });
+  });
+})(jQuery);
+
 </script>

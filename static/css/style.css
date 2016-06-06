@@ -1,27 +1,33 @@
+@font-face {
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Dancing Script'), local('DancingScript'), url(../font/ds.woff) format('woff');
+}
+
+
 html{
 	height: 100vh;
 }
 body{
-	background-color:#f1f1f1;
+	background-color:#f2ddde;
 	color: #565656;
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 400;
 	line-height: 24px;
-	font-family: "Lato", Arial, sans-serif;
+	font-family: 'Dancing Script', cursive;
 	letter-spacing: 0.03em;
 	-webkit-font-smoothing: antialiased;
 	overflow-y: scroll;
 	word-wrap: break-word;
 }
 
-main{
-	padding-left: 240px;
-}
 @media only screen and (max-width : 992px) {
   main, footer {
     padding-left: 0;
   }
 }
+
 /*---------header----------*/
 #logo-container{
 	margin-top: 30px;
@@ -32,36 +38,366 @@ main{
 #logo-container:hover{
 	background-color: transparent;
 }
-#nav-mobile{
-	height: 100vh;
+.top-nav{
+	height: 96px;
+}
+nav a.button-collapse i{
+	height: 96px;
+	line-height: 96px;
+}
+.top-nav i{
+	font-size: 24px;
+	color:#565656;
+}
+.top-nav .brand-logo img{
+	display: block;
+	margin: 24px 0;
+}
+
+.side-nav[id="nav-web"]{
+	height:96vh;
+	top:2vh;
+	left:2vh;
 }
 .side-nav li a{
 	text-align: center;
+	font-size: 18px;
+	color:#313131;
+}
+.social{
+	width:192px;
+	overflow: hidden;
+	margin: 0 auto;
+	margin-top:48px;
+}
+.social li{
+	float: left;
+	width: 48px;
+	height: 48px;
+	line-height: 48px;
+}
+.social li:hover{
+	background-color: transparent;
+}
+.social li a{
+	width: 48px;
+	height: 48px;
+	padding: 0;
+	line-height: 48px;
+	text-align: center;
+	font-size: 18px;
+	transition: .5s;
+	color:silver;
+	border-radius: 50%;
+}
+.social li a:hover{
+	background-color: #89ABE3;
+	color: #fff;
+}
+.copy{
+	text-align: center;
 }
 /*--------content----------*/
-.row .col{
-	padding:0px;
-	margin: 0px;
+.content{
+	position: absolute;
+	height: 96vh;
+	top: 2vh;
+	width: calc(96% - 240px);
+	right: 2vw;
 }
 .grid{
-	box-sizing: border-box;
+	position: relative;
+	text-align: center;
+	margin-bottom: 10px;
 }
 .grid a{
-	position: relative;
-}
-.grid-full-height{
-	height: 100vh;
-	position: relative;
-}
-.grid-half-height{
-	height: 50vh;
-	position: relative
-}
-.bg-image{
-	height: 100%;
-	transition: .25s;
+	width: 100%;
+	height: 96vh;
+	background-repeat: no-repeat;
+	background-position: center;
 	background-size: cover;
+}
+.grid a>h4{
+	position: absolute;
+	right:20px;
+	bottom: 40%; 
+	border-radius: 50%;
+	text-align: center;
+	background-color: #fff;
+	color: #9e9e9e;
+	width: 160px;
+	height: 160px;
+	line-height: 160px;
+	transition: .5s;
+	border: 5px solid #fff;
+}
+.grid a:hover > h4{
+	background-color: #f2ddde;
+	color: #fff;
+	border: 5px solid #fff;
+}
+
+/*--------lookbook----------*/
+.lookbook{
+	z-index: 999;
+}
+/**
+ * Grid container
+ */
+.tiles-wrap {
+  position: relative; /** Needed to ensure items are laid out relative to this container **/
+  margin: 0px 0;
+  padding: 0;
+  list-style-type: none;
+  display: none;
+}
+
+
+/**
+ * Grid items
+ */
+.tiles-wrap li {
+  display: block;
+  opacity: 1;
+  text-align: center;
+  list-style-type: none;
+  background-color: #fff;
+  float: left;
+  cursor: pointer;
+  width: 200px;
+  padding: 4px;
+  border: 1px solid #dedede;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
+}
+
+.tiles-wrap img {
+  display: block;
+  cursor: zoom-in;
+}
+
+.tiles-wrap a {
+  color: #555;
+  text-align: center;
+  /* display: table-cell; */
+  width: 200px;
+  height: 200px;
+  font-size: 2em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.tile-loading:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #ddd;
+  content: "Loading\2026";
+  padding-top: 20px;
+  color: #999;
+}
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  /* ideally, transition speed should match zoom duration */
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+    opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+  opacity: 0;
+}
+/*----------Product----------*/
+.card{
+	position: relative;
+	margin: 0 0 1rem 0;
+	background-color: #fff;
+	transition: box-shadow .25s;
+	border-radius: 2px
+}
+.card:hover{
+	box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19)
+}
+.card-content{
+	background-color: #fafafa;
+	color:#919191;
+}
+.card-content .title{
+	font-weight: 700;
+}
+.card-content .short{
+	font-family: "Lato","Arial";
+	height: 48px;
+	overflow: hidden;
+}
+.card-content .color{
+	overflow: hidden;
+}
+.card-content .color li{
+	width: 24px;
+	height: 16px;
+	float: left;
+	margin-right: 10px;
+}
+/*--------pagination-------*/
+.pagination{
+	font-family: "Arial";
+	padding-top: 24px;
+	padding-bottom: 48px;
+	text-align: center;
+}
+
+/*--------page-------*/
+.page .row > .col{
+	padding: 0px;
+}
+.page .banner{
+	margin-left: 10px;
+	margin-bottom: 10px;
+	height: 400px;
 	background-position: center;
 	background-repeat: no-repeat;
-	box-sizing: border-box;
+	background-size: cover;
+}
+.page .page-title{
+	margin: 0 auto;
+	border-radius: 50%;
+	text-align: center;
+	background-color: #fff;
+	color: #9e9e9e;
+	width: 150px;
+	height: 150px;
+	border: 5px solid #fff;
+}
+.page .page-title>h4{
+	width: 100%;
+	text-align: center;
+	font-size: 28px;
+}
+.page .row{
+	background-color: #fff;
+	margin: 0px;
+	margin-left: 10px;
+	padding-bottom:20px;
+}
+.page .special-text{
+	font-weight: 700;
+	font-size: 24px;
+	padding: 20px 20px 10px 20px;
+}
+.page .text{
+	font-family: "Roboto";
+	padding: 20px 20px 10px 20px;
+	line-height: 26px;
+	font-weight: 300;
+
+}
+/*--------contact-------*/
+#contact form .col{
+	padding:0 0.15em;
+}
+#contact form .submit{
+	display: inline-block;
+	font-size:18px;
+	padding: 10px 20px;
+	background-color:#89ABE3;
+	border: 5px solid #89ABE3;
+	color: #fff;
+}
+#contact form .submit:hover{
+	border: 5px solid #89ABE3;
+	background-color:#fff;
+	color: #565656;
+}
+ /* label color */
+   .input-field label {
+     color: #89ABE3;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #89ABE3;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #89ABE3;
+     box-shadow: 0 1px 0 0 #89ABE3;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #89ABE3;
+     box-shadow: 0 1px 0 0 #89ABE3;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #89ABE3;
+     box-shadow: 0 1px 0 0 #89ABE3;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #89ABE3;
+   }
+   .input-field .materialize-textarea{
+   	 color: #89ABE3;
+   }
+   .input-field textarea.materialize-textarea:focus + label {
+     color: #89ABE3;
+   }
+   /* label underline focus color */
+   textarea.materialize-textarea:focus:not([readonly]) {
+     border-bottom: 1px solid #89ABE3;
+     box-shadow: 0 1px 0 0 #89ABE3;
+   }
+   /* valid color */
+   textarea.materialize-textarea.valid {
+     border-bottom: 1px solid #89ABE3;
+     box-shadow: 0 1px 0 0 #89ABE3;
+   }
+   /* invalid color */
+   textarea.materialize-textarea.invalid {
+     border-bottom: 1px solid #89ABE3;
+     box-shadow: 0 1px 0 0 #89ABE3;
+   }
+
+/*-----------resonsive--------*/
+
+@media only screen and (max-width : 992px) {
+  .content{
+  	position: relative;
+  	left:0;
+  	right: 0;
+    width:96%;
+    margin: 0 auto;
+  }
+
+  .side-nav{
+  	height:100%;
+  	top:0;
+  	left:0;
+  }
+  .grid a{
+  	 height: calc(96vw*16/9);
+  }
+}
+@media only screen and (min-width : 1920px) {
+	.page .banner{
+		height: 600px;
+	}
 }

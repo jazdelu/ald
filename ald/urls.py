@@ -20,5 +20,11 @@ from django.conf.urls.static import static
 from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', TemplateView.as_view(template_name="comming.html")),
+    url(r'^index/$', TemplateView.as_view(template_name="index.html")),
+    url(r'^shoes/$', TemplateView.as_view(template_name="product.html")),
+    url(r'^accessories/$', TemplateView.as_view(template_name="product.html")),
+    url(r'^contact/$', TemplateView.as_view(template_name="contact.html")),
+    url(r'^story/$', TemplateView.as_view(template_name="about.html")),
+    url(r'^lookbook/$', TemplateView.as_view(template_name="lookbook.html")),
+    url(r'^service/$', TemplateView.as_view(template_name="service.html")),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

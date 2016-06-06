@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset= "utf-8">
+	<meta name="author" content="A Little Dream">
+	<meta name="description" content = "">
+	<link rel="stylesheet" type="text/css" href="static/materialize/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="static/fa/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+	<title>Homepage | A Little Dream</title>
+</head>
+<body>
+<header>
+	<div class = "container">
+		<a href="#" data-activates="nav-mobile" class="hide-on-large-only" >
+			<i>menu</i>
+		</a>
+	</div>
+	<ul id = "nav-mobile" class="side-nav" style="transform:translateX(0%);">
+		<a id = "logo-container" href="#" class="brand-logo">
+			<img src="static/images/logo.jpg"/>
+		</a>
+		<li class = "bold">
+			<a href="index.html" class="waves-effect waves-grey">Home</a>
+		</li>
+		<li class = "bold">
+			<a href="Story.html" class="waves-effect waves-grey">Story</a>
+		</li>
+		<li class = "bold">
+			<a href="Story.html" class="waves-effect waves-grey">Lookbook</a>
+		</li>
+		<li class = "bold">
+			<a class="waves-effect waves-grey" href="contact.html">Contact</a>
+		</li>
+		<li class = "bold">
+			<a href="Story.html" class="waves-effect waves-grey">Service</a>
+		</li>
+		<ul class="social">
+			<li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+			<li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+			<li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+			<li><a href="#" target="_blank"><i class="fa fa-weibo"></i></a></li>
+		</ul>
+		<p class="copy">Copyright@A Little Dream</p>
+	</ul>
+</header>
+<main>
+	<div class="content page" id ="about">
+		<div class="banner valign-wrapper" style="background-image:url(static/images/7.jpg)">
+			<div class="page-title valign-wrapper">
+				<h4 class="valign">Contact</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col l6 m12 s12">
+				<div class="special-text">
+					Get In Touch
+				</div>
+				<div class="text">
+				<p>Phone:</p>
+				<p>Address</p>
+				<p>Email</p>
+				</div>
+			</div>
+			<div class="col l6 m12 s12">
+				<div class="special-text">
+					Send Us A Message
+				</div>
+	    <form class="col s12">
+	      <div class="row">
+	        <div class="input-field col s6">
+	          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+	          <label for="first_name">Name</label>
+	        </div>
+	        <div class="input-field col s6">
+	          <input id="last_name" type="text" class="validate">
+	          <label for="last_name">Email</label>
+	        </div>
+	      </div>
+	      <div class="row">
+	        <div class="input-field col s12">
+	          <input id="subject" type="text" class="validate">
+	          <label for="subject">Subject</label>
+	        </div>
+	      </div>
+	      <div class="row">
+	        <div class="input-field col s12">
+	          <textarea id="textarea1" class="materialize-textarea"></textarea>
+	          <label for="textarea1">Message</label>
+	        </div>
+	      </div>
+	    </form>
+			</div>
+		</div>
+	</div>
+</main>
+<footer>
+</footer>
+</body>
+<script type = "text/javascript" src="static/js/jquery.min.js"></script>
+<script type="text/javascript" src="static/materialize/js/materialize.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('.parallax').parallax();
+    });	
+</script>

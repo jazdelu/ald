@@ -170,15 +170,14 @@ nav a.button-collapse i{
   background-color: #fff;
   float: left;
   cursor: pointer;
-  width: 200px;
+  width: 300px;
   padding: 4px;
-  border: 1px solid #dedede;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-  -webkit-border-radius: 2px;
-     -moz-border-radius: 2px;
-          border-radius: 2px;
+  border: 5px solid #fff;
+  border-bottom: 45px solid #fff;
+  transition: .25s;
+}
+.tiles-wrap li:hover{
+	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .tiles-wrap img {
@@ -190,8 +189,7 @@ nav a.button-collapse i{
   color: #555;
   text-align: center;
   /* display: table-cell; */
-  width: 200px;
-  height: 200px;
+
   font-size: 2em;
   font-weight: bold;
   text-decoration: none;

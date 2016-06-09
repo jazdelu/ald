@@ -116,6 +116,12 @@ nav a.button-collapse i{
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+  transition: box-shadow .25s;
+  box-shadow: 0;
+}
+.grid a:hover{
+  transition: box-shadow .25s;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .grid a>h4{
 	position: absolute;
@@ -132,7 +138,7 @@ nav a.button-collapse i{
 	border: 5px solid #fff;
 }
 .grid a:hover > h4{
-	background-color: #f2ddde;
+	background-color: #89ABE3;
 	color: #fff;
 	border: 5px solid #fff;
 }

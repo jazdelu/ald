@@ -1,10 +1,16 @@
 @font-face {
-  font-family: 'Dancing Script';
+  font-family: 'Showcase Script';
   font-style: normal;
   font-weight: 400;
-  src: local('Dancing Script'), local('DancingScript'), url(../font/ds.woff) format('woff');
+  src: local('Showcase Script'), local('Showcase Script'), url(../font/showcase-script.otf) format('opentype');
 }
 
+@font-face {
+  font-family: 'Showcase Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Showcase Sans'), local('Showcase Sans'), url(../font/showcase-sans.otf) format('opentype');
+}
 
 html{
 	height: 100vh;
@@ -12,16 +18,21 @@ html{
 body{
 	background-color:#f2ddde;
 	color: #565656;
-	font-size: 15px;
-	font-weight: 400;
+	font-size: 22px;
+	font-weight: 300;
 	line-height: 24px;
-	font-family: 'Dancing Script', cursive;
-	letter-spacing: 0.03em;
+	font-family: 'Showcase Sans', 'Roboto';
 	-webkit-font-smoothing: antialiased;
 	overflow-y: scroll;
 	word-wrap: break-word;
 }
-
+h1, h2,h3,h4,h5{
+	font-family: 'Showcase Script',cursive;
+}
+a, .special-text{
+	font-size: 16px;
+	font-family: 'Showcase Script',cursive;
+}
 @media only screen and (max-width : 992px) {
   main, footer {
     padding-left: 0;
@@ -50,14 +61,21 @@ nav a.button-collapse i{
 	color:#565656;
 }
 .top-nav .brand-logo img{
+	height: 36px;
 	display: block;
-	margin: 24px 0;
+	margin: 30px 0;
 }
 
 .side-nav[id="nav-web"]{
 	height:96vh;
 	top:2vh;
 	left:2vh;
+}
+#nav-web{
+	height:96vh;
+	top:2vh;
+	left:2vh;
+	width: 320px;
 }
 .side-nav li a{
 	text-align: center;
@@ -102,7 +120,7 @@ nav a.button-collapse i{
 	position: absolute;
 	height: 96vh;
 	top: 2vh;
-	width: calc(96% - 240px);
+	width: calc(96% - 320px);
 	right: 2vw;
 }
 .grid{
@@ -136,6 +154,7 @@ nav a.button-collapse i{
 	line-height: 160px;
 	transition: .5s;
 	border: 5px solid #fff;
+	font-size:24px;
 }
 .grid a:hover > h4{
 	background-color: #89ABE3;
@@ -240,15 +259,37 @@ nav a.button-collapse i{
 .card:hover{
 	box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19)
 }
+.card-img{
+	position: relative;
+}
+.slick-arrow{
+	position: absolute;
+	top: 50%;
+	border: none;
+	background-color: transparent;
+	font-weight: 300;
+	opacity: 0;
+	transition: .25s;
+}
+.card-img:hover>.slick-arrow{
+	opacity: 0.7;
+}
+.slick-prev{
+	left:0;
+	z-index: 999;
+}
+.slick-next{
+	right:0;
+}
+
 .card-content{
 	background-color: #fafafa;
 	color:#919191;
 }
 .card-content .title{
-	font-weight: 700;
+	font-size: 15px;
 }
 .card-content .short{
-	font-family: "Lato","Arial";
 	height: 48px;
 	overflow: hidden;
 }
@@ -294,25 +335,23 @@ nav a.button-collapse i{
 .page .page-title>h4{
 	width: 100%;
 	text-align: center;
-	font-size: 28px;
+	font-size: 16px;
+	line-height: 26px;
 }
 .page .row{
 	background-color: #fff;
 	margin: 0px;
 	margin-left: 10px;
-	padding-bottom:20px;
+	padding:15px 20px;
 }
 .page .special-text{
-	font-weight: 700;
-	font-size: 24px;
+	font-size: 22px;
 	padding: 20px 20px 10px 20px;
 }
 .page .text{
-	font-family: "Roboto";
 	padding: 20px 20px 10px 20px;
 	line-height: 26px;
 	font-weight: 300;
-
 }
 /*--------contact-------*/
 #contact form .col{

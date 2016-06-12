@@ -28,4 +28,5 @@ urlpatterns = [
     url(r'^story/$', TemplateView.as_view(template_name="about.html")),
     url(r'^lookbook/$', TemplateView.as_view(template_name="lookbook.html")),
     url(r'^service/$', TemplateView.as_view(template_name="service.html")),
+    url(r'^info/$', TemplateView.as_view(template_name="info.html")),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

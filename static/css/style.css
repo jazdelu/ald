@@ -33,6 +33,10 @@ a, .special-text{
 	font-size: 1em;
 	font-family: 'Showcase Script',cursive;
 }
+img.responsive-img{
+	width: 100%;
+}
+
 p{
 	font-size: 1.5em;
 }
@@ -148,9 +152,9 @@ nav a.button-collapse i{
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .grid a>.grid-title{
-	position: absolute;
-	bottom: 40%;
-	right: 10px;
+    position: absolute;
+    right:0;
+    bottom:0;
 	text-align: center;
 	color: #333;
 	font-size:2em;
@@ -164,15 +168,13 @@ nav a.button-collapse i{
 }
 .grid a>.grid-title>span{
 	display: block;
-	padding: 16px 16px;
+	height: 100%;
+	padding: 8px 32px;
 	font-family: 'Showcase Sans', 'Roboto';
 	font-weight:700;
-	text-align: left;
+	text-align: center;
 	line-height: 64px;
 	border: 1px solid #fff;
-}
-.grid.fullwidth a>.grid-title>span{
-	padding: 8px 32px;
 }
 
 .grid a:hover>.grid-title{
@@ -462,5 +464,8 @@ nav a.button-collapse i{
 @media only screen and (min-width : 1920px) {
 	.page .banner{
 		height: 600px;
+	}
+	.grid a>.grid-title{
+		font-size:2.5em;
 	}
 }

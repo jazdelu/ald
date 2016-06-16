@@ -18,9 +18,9 @@ html{
 body{
 	background-color:#f2ddde;
 	color: #565656;
-	font-size: 22px;
+	font-size: 100%;
 	font-weight: 300;
-	line-height: 24px;
+	line-height: 26px;
 	font-family: 'Showcase Sans', 'Roboto';
 	-webkit-font-smoothing: antialiased;
 	overflow-y: scroll;
@@ -30,8 +30,11 @@ h1, h2,h3,h4,h5{
 	font-family: 'Showcase Script',cursive;
 }
 a, .special-text{
-	font-size: 16px;
+	font-size: 1em;
 	font-family: 'Showcase Script',cursive;
+}
+p{
+	font-size: 1.5em;
 }
 @media only screen and (max-width : 992px) {
   main, footer {
@@ -57,7 +60,7 @@ nav a.button-collapse i{
 	line-height: 96px;
 }
 .top-nav i{
-	font-size: 24px;
+	font-size: 1.5em;
 	color:#565656;
 }
 .top-nav .brand-logo img{
@@ -67,26 +70,29 @@ nav a.button-collapse i{
 }
 
 .side-nav[id="nav-web"]{
-	height:96vh;
 	top:2vh;
 	left:2vh;
+	width: 240px;
+	height: auto;
+	padding-bottom: 10px;
 }
 #nav-web{
-	height:96vh;
 	top:2vh;
 	left:2vh;
-	width: 320px;
+	width: 240px;
+	height: auto;
+	padding-bottom: 10px;
 }
 .side-nav li a{
 	text-align: center;
-	font-size: 18px;
 	color:#313131;
+	padding: 0 5px;
 }
 .social{
 	width:192px;
 	overflow: hidden;
 	margin: 0 auto;
-	margin-top:48px;
+	margin-top:24px;
 }
 .social li{
 	float: left;
@@ -118,21 +124,21 @@ nav a.button-collapse i{
 /*--------content----------*/
 .content{
 	position: absolute;
-	height: 96vh;
 	top: 2vh;
-	width: calc(96% - 320px);
+	width: calc(96% - 240px);
 	right: 2vw;
 }
 .grid{
 	position: relative;
 	text-align: center;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
+
 .grid a{
+	position: relative;
 	width: 100%;
-	height: 96vh;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: top;
 	background-size: cover;
   transition: box-shadow .25s;
   box-shadow: 0;
@@ -141,27 +147,41 @@ nav a.button-collapse i{
   transition: box-shadow .25s;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.grid a>h4{
+.grid a>.grid-title{
 	position: absolute;
-	right:20px;
-	bottom: 40%; 
-	border-radius: 50%;
+	bottom: 40%;
+	right: 10px;
 	text-align: center;
-	background-color: #fff;
-	color: #9e9e9e;
-	width: 160px;
-	height: 160px;
-	line-height: 160px;
-	transition: .5s;
-	border: 5px solid #fff;
-	font-size:24px;
-}
-.grid a:hover > h4{
-	background-color: #89ABE3;
+	color: #333;
+	font-size:2em;
+	transition: .25s;
+	display: block;
+	background-color: #f2ddde;
 	color: #fff;
-	border: 5px solid #fff;
+	padding: 5px;
+	opacity: .75;
+
+}
+.grid a>.grid-title>span{
+	display: block;
+	padding: 16px 16px;
+	font-family: 'Showcase Sans', 'Roboto';
+	font-weight:700;
+	text-align: left;
+	line-height: 64px;
+	border: 1px solid #fff;
+}
+.grid.fullwidth a>.grid-title>span{
+	padding: 8px 32px;
 }
 
+.grid a:hover>.grid-title{
+	background-color: #89ABE3;
+	color: #fff;
+}
+.grid a:hover>.grid-title>span{
+	border: 1px solid #fff;
+}
 /*--------lookbook----------*/
 .lookbook{
 	z-index: 999;
@@ -422,6 +442,9 @@ nav a.button-collapse i{
 /*-----------resonsive--------*/
 
 @media only screen and (max-width : 992px) {
+  body{
+  	font-size: 90%;
+  }
   .content{
   	position: relative;
   	left:0;
@@ -434,9 +457,6 @@ nav a.button-collapse i{
   	height:100%;
   	top:0;
   	left:0;
-  }
-  .grid a{
-  	 height: calc(96vw*16/9);
   }
 }
 @media only screen and (min-width : 1920px) {

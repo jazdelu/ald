@@ -404,6 +404,15 @@ footer.page-footer{
 #contact form .col{
 	padding:0 0.15em;
 }
+#contact form label{
+	font-size: 1.5em;
+}
+#contact form input{
+	font-size: 1.5em;
+}
+#contact form textarea{
+	font-size: 1.5em;
+}
 #contact form .submit{
 	display: inline-block;
 	font-size:18px;

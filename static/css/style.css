@@ -400,6 +400,9 @@ footer.page-footer{
 	line-height: 26px;
 	font-weight: 300;
 }
+table{
+	font-size: 1.5em;
+}
 /*--------contact-------*/
 #contact form .col{
 	padding:0 0.15em;

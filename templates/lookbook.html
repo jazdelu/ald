@@ -1,88 +1,11 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-	<meta charset= "utf-8">
-	<meta name="author" content="A Little Dream">
-	<meta name="description" content = "">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="/static/materialize/css/materialize.min.css">
-	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
-	<link rel="stylesheet" type="text/css" href="/static/fa/css/font-awesome.min.css">
-
+{% extends "base.html" %}
+	{% block css %}
 	<link rel="stylesheet" type="text/css" href="/static/css/magnific-popup.css">
-	<title>Homepage | A Little Dream</title>
-</head>
-<body>
-<header>
-	<nav class="top-nav white hide-on-large-only">
-		<div class = "container">
-			<a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only" >
-				<i class="fa fa-bars"></i>
-			</a>
-			<a href="#" class="brand-logo center valign-center"><img src="/static/images/logo-typo.png"/></a>
-		</div>
-	</nav>
-	<ul id = "nav-web" class="side-nav hide-on-med-and-down" style="transform:translateX(0%);" >
-		<a id = "logo-container" href="#" class="brand-logo">
-			<img src="/static/images/logo-dot.png" width="150px;" />
-		</a>
-		<li class = "bold">
-			<a href="/index/" class="waves-effect waves-grey">Home</a>
-		</li>
-		<li class = "bold">
-			<a href="/story/" class="waves-effect waves-grey">About Us</a>
-		</li>
-		<li class = "bold">
-			<a href="/lookbook/" class="waves-effect waves-grey">Lookbook</a>
-		</li>
-		<li class = "bold">
-			<a class="waves-effect waves-grey" href="/contact/">Contact</a>
-		</li>
-		<li class = "bold">
-			<a href="/service/" class="waves-effect waves-grey">Costumer Services</a>
-		</li>
-		<li class = "bold">
-			<a href="/info/" class="waves-effect waves-grey">Useful Information</a>
-		</li>
-		<ul class="social">
-			<li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-			<li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-			<li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
-			<li><a href="#" target="_blank"><i class="fa fa-weibo"></i></a></li>
-		</ul>
-		<p class="copy">Copyright@A Little Dream</p>
-	</ul>
-	<ul id = "nav-mobile" class="side-nav" >
-		<a id = "logo-container" href="#" class="brand-logo">
-			<img src="/static/images/logo-dot.png" width="150px;" />
-		</a>
-		<li class = "bold">
-			<a href="/" class="waves-effect waves-grey">Home</a>
-		</li>
-		<li class = "bold">
-			<a href="/story/" class="waves-effect waves-grey">About Us</a>
-		</li>
-		<li class = "bold">
-			<a href="/lookbook/" class="waves-effect waves-grey">Lookbook</a>
-		</li>
-		<li class = "bold">
-			<a href="/service/" class="waves-effect waves-grey">Costumer Services</a>
-		</li>
-		<li class = "bold">
-			<a href="/info/" class="waves-effect waves-grey">Useful Information</a>
-		</li>
-		<ul class="social">
-			<li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-			<li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-			<li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
-			<li><a href="#" target="_blank"><i class="fa fa-weibo"></i></a></li>
-		</ul>
-		<p class="copy">Copyright@A Little Dream</p>
-	</ul>
-</header>
-<main>
-	<div class="content">
+	{% endblock %}
+	{% block title %}Lookbook | A Little Dream{% endblock %}
+
+	{% block content %}
+	<div class="content container">
 		<ul class="tiles-wrap animated" id="lookbook">
 			<li><a href="/static/images/1.jpg"><img src="/static/images/1.jpg" class="responsive-img"></a></li>
 			<li><a href="/static/images/5.jpg"><img src="/static/images/5.jpg" class="responsive-img"></a></li>
@@ -98,23 +21,11 @@
 			<li><a href="/static/images/6.jpg"><img src="/static/images/6.jpg" class="responsive-img"></a></li>
 		</div>
 	</div>
-</main>
-<footer>
-</footer>
-</body>
-<script type = "text/javascript" src="/static/js/jquery.min.js"></script>
-<script type="text/javascript" src="/static/materialize/js/materialize.min.js"></script>
+	{% endblock %}
+{% block js %}
 <script type="text/javascript" src="/static/js/jquery.magnific-popup.min.js"></script>
 <script type="text/javascript" src="/static/js/jquery.wookmark.min.js"></script>
 <script type="text/javascript" src="/static/js/jquery.imagesloaded.js"></script>
-<script type="text/javascript">
-  $('.button-collapse').sideNav({
-      menuWidth: 240, // Default is 240
-      edge: 'left', // Choose the horizontal origin
-      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-    }
-  );
-</script>
 <script type="text/javascript">
 (function ($) {
   // Prepare layout options.
@@ -150,3 +61,4 @@
 })(jQuery);
 
 </script>
+{% endblock %}

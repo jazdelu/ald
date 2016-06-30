@@ -18,15 +18,13 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.conf.urls.static import static
 from django.conf import settings
+from page import views as page_views
+from product import views as product_views
+from lookbook import views as lookbook_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', TemplateView.as_view(template_name="comming.html")),
-    url(r'^index/$', TemplateView.as_view(template_name="index.html")),
-    url(r'^shoes/$', TemplateView.as_view(template_name="product.html")),
-    url(r'^accessories/$', TemplateView.as_view(template_name="product.html")),
-    url(r'^contact/$', TemplateView.as_view(template_name="contact.html")),
-    url(r'^story/$', TemplateView.as_view(template_name="about.html")),
-    url(r'^lookbook/$', TemplateView.as_view(template_name="lookbook.html")),
-    url(r'^service/$', TemplateView.as_view(template_name="service.html")),
-    url(r'^info/$', TemplateView.as_view(template_name="info.html")),
+    url(r'^$', page_views.homepage, name = 'homepage'),
+    url(r'^category/(?P<slug>[\w-]+)/$', product_views.get_products_by_category, name = 'get products by category'),
+    url(r'^p/(?P<slug>[\w-]+)/$', page_views.get_page_by_slug, name = 'get page by slug'),
+    url(r'^lookbook/$', lookbook_views.get_published_lookbook, name = 'get_published_lookbook'),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -27,24 +27,11 @@
 		<a id = "logo-container" href="#" class="brand-logo">
 			<img src="/static/images/logo-dot.png" width="150px;" />
 		</a>
-		<li class = "bold">
-			<a href="/" class="waves-effect waves-grey">Home</a>
-		</li>
-		<li class = "bold">
-			<a href="/story/" class="waves-effect waves-grey">About Us</a>
-		</li>
-		<li class = "bold">
-			<a href="/lookbook/" class="waves-effect waves-grey">Lookbook</a>
-		</li>
-		<li class = "bold">
-			<a class="waves-effect waves-grey" href="/contact/">Contact</a>
-		</li>
-		<li class = "bold">
-			<a href="/service/" class="waves-effect waves-grey">Costumer Services</a>
-		</li>
-		<li class = "bold">
-			<a href="/info/" class="waves-effect waves-grey">Useful Information</a>
-		</li>
+      <li><a class="grey-text text-darken-3" href="/">Home</a></li>
+      <li><a class="grey-text text-darken-3" href="#!">Lookbook</a></li>
+      {% for page in pages %}
+      <li><a class="grey-text text-darken-3" href="/p/{{ page.slug }}/">{{ page.title }}</a></li>
+      {% endfor %}
 		<ul class="social">
 			<li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
 			<li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
@@ -67,24 +54,11 @@
 		<nav>
 			<div class="nav-wrapper">
 				<ul id = "nav-web" class="hide-on-med-and-down">
-					<li class = "bold">
-						<a href="/index/" >Home</a>
-					</li>
-					<li class = "bold">
-						<a href="/story/">About Us</a>
-					</li>
-					<li class = "bold">
-						<a href="/lookbook/">Lookbook</a>
-					</li>
-					<li class = "bold">
-						<a href="/contact/">Contact</a>
-					</li>
-					<li class = "bold">
-						<a href="/service/" >Costumer Services</a>
-					</li>
-					<li class = "bold">
-						<a href="/info/">Useful Info</a>
-					</li>
+		          <li><a href="/">Home</a></li>
+		          <li><a href="/lookbook/">Lookbook</a></li>
+		          {% for page in pages %}
+		          <li><a href="/p/{{ page.slug }}/">{{ page.title }}</a></li>
+		          {% endfor %}
 				</ul>
 			</div>
 		</nav>
@@ -99,17 +73,16 @@
     <div class="row">
       <div class="col l6 s12">
         <h5 class="black-text">Hand made with LOVE</h5>
-        <p class="grey-text text-darken-4">”a little dream” is a shoe and accesories brand for babies and toddlers, which is borned in London, lovingly designed by Alejandra</p>
+        <p class="grey-text text-darken-4">”a little dream” is a shoe and accesories brand born in London and lovingly designed by Alejandra for babies and toddlers.</p>
       </div>
       <div class="col l4 offset-l2 s12">
         <h5 class="black-text">A Little Dream</h5>
         <ul>
-          <li><a class="grey-text text-darken-3" href="#!">Home</a></li>
-          <li><a class="grey-text text-darken-3" href="#!">ABout Us</a></li>
-          <li><a class="grey-text text-darken-3" href="#!">Lookbook</a></li>
-          <li><a class="grey-text text-darken-3" href="#!">Contact</a></li>
-          <li><a class="grey-text text-darken-3" href="#!">Costumer Services</a></li>
-          <li><a class="grey-text text-darken-3" href="#!">Useful Information</a></li>
+          <li><a class="grey-text text-darken-3" href="/">Home</a></li>
+          <li><a class="grey-text text-darken-3" href="/lookbook/">Lookbook</a></li>
+          {% for page in pages %}
+          <li><a class="grey-text text-darken-3" href="/p/{{ page.slug }}/">{{ page.title }}</a></li>
+          {% endfor %}
         </ul>
       </div>
     </div>

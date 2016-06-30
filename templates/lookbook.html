@@ -7,19 +7,12 @@
 	{% block content %}
 	<div class="content container">
 		<ul class="tiles-wrap animated" id="lookbook">
-			<li><a href="/static/images/1.jpg"><img src="/static/images/1.jpg" class="responsive-img"></a></li>
-			<li><a href="/static/images/5.jpg"><img src="/static/images/5.jpg" class="responsive-img"></a></li>
-			<li><a href="/static/images/3.jpg"><img src="/static/images/3.jpg" class="responsive-img"></a></li>
-			<li><a href="/static/images/2.jpg"><img src="/static/images/2.jpg" class="responsive-img"></a></li>
-			<li><a href="/static/images/4.jpg"><img src="/static/images/4.jpg" class="responsive-img"></a></li>
-			<li><a href="/static/images/6.jpg"><img src="/static/images/6.jpg" class="responsive-img"></a></li>
-			<li><a href="/static/images/1.jpg"><img src="/static/images/1.jpg" class="responsive-img"></a></li>
-			<li><a href="/static/images/5.jpg"><img src="/static/images/5.jpg" class="responsive-img"></a></li>
-			<li><a href="/static/images/3.jpg"><img src="/static/images/3.jpg" class="responsive-img"></a></li>
-			<li><a href="/static/images/2.jpg"><img src="/static/images/2.jpg" class="responsive-img"></a></li>
-			<li><a href="/static/images/4.jpg"><img src="/static/images/4.jpg" class="responsive-img"></a></li>
-			<li><a href="/static/images/6.jpg"><img src="/static/images/6.jpg" class="responsive-img"></a></li>
-		</div>
+			{% for look in lookbook.images.all %}
+			<li><a href="{{ look.image.url }}"><img src="{{ look.image.url }}" class="responsive-img"></a></li>
+			{% empty %}
+			<h4>No lookbook found!</h4>
+			{% endfor %}
+		</ul>
 	</div>
 	{% endblock %}
 {% block js %}

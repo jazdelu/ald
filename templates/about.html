@@ -4,39 +4,41 @@
 
 	{% block content %}
 	<div class="content container page" id ="about">
-		<div class="banner valign-wrapper" style="background-image:url(/static/images/10.jpg)">
+		<div class="banner valign-wrapper" style="background-image:url({{ page.banner.url  }})">
 			<div class="page-title valign-wrapper">
-				<h4 class="valign">Story</h4>
+				<h4 class="valign">{{ page.title }}</h4>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col l6 m6 s12 center">
-				<img src="/static/images/logo-dot.png" class="responsive-img">
-			</div>
-			<div class="col l6 m6 s12">
-				<div class="special-text">
-					About "A Little Dream"
-				</div>
-				<div class="text">
-	}
-<p>”a little dream” is a shoe and accesories brand for babies and toddlers, which is borned in London, lovingly designed by Alejandra</p>
-<p>“a little dream” shoes gathers all the qualities a boy or girls needs in a first steps shoe. Soft and light, the shoes give freedom of movement, flexibility and balance for unequalled comfort.</p>
-<p>Every shoe is hand-made using non-chemical tested leather which is sown to an impeccable finish. The final product provides our little ones with a fashionable and comfortable look!</p>
-				</div>
-			</div>
-		</div>
+		{% for s in page.sections.all %}
+		{% if forloop.counter|divisibleby:2 %}
 		<div class="row">
 			<div class="col l6 m6 s12">
 				<div class="special-text">
-					About Alejandra
+					{{ s.title }}
 				</div>
 				<div class="text">
-<p>Everything is created lovingly by Alejandra, a Latin American designer and mother of two boys with over a decade of fashion experience in New York, Mexico and London.</p>
+					{{ s.content|linebreaksbr }}
 				</div>
 			</div>
-			<div class="col l6 m6 s12" style="text-align:right;">
-				<img src="/static/images/family.jpg" class="responsive-img">			
+			<div class="col l6 m6 s12 center ">
+				<img src="{{ s.image.url }}" class="responsive-img">
 			</div>
 		</div>
+		{% else %}
+		<div class="row">
+			<div class="col l6 m6 s12 center ">
+				<img src="{{ s.image.url }}" class="responsive-img">
+			</div>
+			<div class="col l6 m6 s12">
+				<div class="special-text">
+					{{ s.title }}
+				</div>
+				<div class="text">
+					{{ s.content|linebreaksbr }}
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		{% endfor %}
 	</div>
 {% endblock %}

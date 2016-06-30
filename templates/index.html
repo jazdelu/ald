@@ -7,41 +7,21 @@
 		<div class="row">
 			<div class="grid col l12 m12 s12 fullwidth">
 				<a href="/story/" class="valign-wrapper">
-					<img src="/static/images/11.jpg" class="responsive-img" / >
+					<img src="{{ homepage.banner.url }}" class="responsive-img" / >
 				</a>
 			</div>
+			{% for link in homepage.links.all %}
 			<div class="grid col l6 m12 s12">
-				<a href="/shoes/" class="valign-wrapper">
-					<img src="/static/images/8.jpg" class="responsive-img">
+				<a href="/category/{{ link.category.slug }}/" class="valign-wrapper">
+					<img src="{{ link.image.url }}" class="responsive-img">
 					<div class="grid-title-panel center">
-					<div class="grid-title"><span>Shoes</span></div>
+					<div class="grid-title"><span>{{ link.title }}</span></div>
 					</div>
 				</a>
 			</div>
-			<div class="grid col l6 m12 s12">
-				<a href="/accessories/" class="valign-wrapper">
-					<img src="/static/images/16.jpg" class="responsive-img">
-					<div class="grid-title-panel">
-					<div class="grid-title"><span>Boys And Girls</span></div>
-					</div>
-				</a>
-			</div>
-			<div class="grid col l6 m12 s12">
-				<a href="/accessories/" class="valign-wrapper">
-					<img src="/static/images/13.jpg" class="responsive-img">
-					<div class="grid-title-panel">
-					<div class="grid-title"><span>Home</span></div>
-					</div>
-				</a>
-			</div>
-			<div class="grid col l6 m12 s12">
-				<a href="/accessories/" class="valign-wrapper">
-					<img src="/static/images/15.jpg" class="responsive-img">
-					<div class="grid-title-panel">
-					<div class="grid-title"><span>For Fun And Play</span></div>
-					</div>
-				</a>
-			</div>
+			{% empty %}
+			<h4>You haven't set the homepage link(icon) in your admin interface.</h4>
+			{% endfor %}
 		</div>
 	</div>
 	{% endblock %}

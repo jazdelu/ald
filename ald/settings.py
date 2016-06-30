@@ -31,12 +31,17 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'suit',
+    'colorful',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'product',
+    'page',
+    'lookbook',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -63,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'page.processors.get_pages_in_nav'
             ],
         },
     },
@@ -76,8 +82,12 @@ WSGI_APPLICATION = 'ald.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ald',
+        'USER': 'jazdelu',
+        'PASSWORD': 'lushizhao1129',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -130,3 +140,25 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/upload/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'upload/')
+
+
+SUIT_CONFIG = {
+    # header
+    'ADMIN_NAME': 'A Little Dream Website Manager',
+    'HEADER_DATE_FORMAT': 'Y-m-d',
+    'HEADER_TIME_FORMAT': 'H:i',
+
+    # forms
+    # 'SHOW_REQUIRED_ASTERISK': True,  # Default True
+    # 'CONFIRM_UNSAVED_CHANGES': True, # Default True
+
+    # menu
+    # 'SEARCH_URL': '/admin/auth/user/',
+
+    'MENU_OPEN_FIRST_CHILD': True, # Default True
+    # 'MENU_EXCLUDE': ('auth.group',),
+
+
+    # misc
+    'LIST_PER_PAGE': 10
+}

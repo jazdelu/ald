@@ -2,102 +2,53 @@
 	{% block css %}
 	<link rel="stylesheet" type="text/css" href="/static/slick/slick.css">
 	{% endblock %}
-	{% block title %}Shoes | A Little Dream{% endblock %}
+	{% block title %}{{ category.name }} | A Little Dream{% endblock %}
 
 	{% block content %}
 	<div class="content container">
 		<div class="banner valign-wrapper" style="background-image:url(/static/images/14.jpg)">
 			<div class="page-title valign-wrapper">
-				<h4 class="valign">Shoes</h4>
+				<h4 class="valign">{{ category.name }}</h4>
 			</div>
 		</div>
 		<div class="row">
+			{% for product in products %}
 			<div class="col l4 m6 s12">
 				<div class="card">
 					<div class="card-img">
+						{% for image in product.images.all %}
 						<div>
-							<img src="/static/images/p1-1.jpg" class="responsive-img" >
+							<img src="{{ image.image.url }}" class="responsive-img" >
 						</div>
-						<div>
-							<img src="/static/images/p1-2.jpg" class="responsive-img" >
-						</div>
+						{% endfor %}
 					</div>
 					<div class="card-content">
-						<h5 class="title">Dorothy</h5>
-						<p class="short">Shine with these textured leather shoes, be the prettiest girl in the party!</p>
+						<h5 class="title">{{ product.name }}</h5>
+						<p class="short">{{ product.short_description }}</p>
 						<ul class="color">
-							<li style="background-color:#bb283b;"></li>
+							{% for color in product.color.all %}
+							<li style="background-color:{{ color.color }};"></li>
+							{% endfor %}
 						</ul>
 					</div>
 				</div>
 			</div>
-			<div class="col l4 m6 s12">
-				<div class="card">
-					<div class="card-img">
-						<div>
-							<img src="/static/images/p2-1.jpg" class="responsive-img" >
-						</div>
-						<div>
-							<img src="/static/images/p2-2.jpg" class="responsive-img" >
-						</div>
-					</div>
-					<div class="card-content">
-						<h5 class="title">Hippie Moccasin</h5>
-						<p class="short">Easy matching and fun pull-up soft leather moccasins are great for every day use. Giving a Bohemian and comfortable look!</p>
-						<ul class="color">
-							<li style="background-color:#543532;"></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col l4 m6 s12">
-				<div class="card">
-					<div class="card-img">
-						<div>
-							<img src="/static/images/p1-1.jpg" class="responsive-img" >
-						</div>
-						<div>
-							<img src="/static/images/p1-2.jpg" class="responsive-img" >
-						</div>
-					</div>
-					<div class="card-content">
-						<h5 class="title">Dorothy</h5>
-						<p class="short">Shine with these textured leather shoes, be the prettiest girl in the party!</p>
-						<ul class="color">
-							<li style="background-color:#bb283b;"></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col l4 m6 s12">
-				<div class="card">
-					<div class="card-img">
-						<div>
-							<img src="/static/images/p2-1.jpg" class="responsive-img" >
-						</div>
-						<div>
-							<img src="/static/images/p2-2.jpg" class="responsive-img" >
-						</div>
-					</div>
-					<div class="card-content">
-						<h5 class="title">Hippie Moccasin</h5>
-						<p class="short">Easy matching and fun pull-up soft leather moccasins are great for every day use. Giving a Bohemian and comfortable look!</p>
-						<ul class="color">
-							<li style="background-color:#543532;"></li>
-						</ul>
-					</div>
-				</div>
-			</div>
+			{% empty %}
+			<h4>No products found!</h4>
+			{% endfor %}
 		</div>
-		  <ul class="pagination">
-		    <li class="disabled"><a href="#!"><i class="fa fa-chevron-left"></i></a></li>
-		    <li class="active"><a href="#!">1</a></li>
-		    <li class="waves-effect"><a href="#!">2</a></li>
-		    <li class="waves-effect"><a href="#!">3</a></li>
-		    <li class="waves-effect"><a href="#!">4</a></li>
-		    <li class="waves-effect"><a href="#!">5</a></li>
-		    <li class="waves-effect"><a href="#!"><i class="fa fa-chevron-right"></i></a></li>
-		  </ul>
+		<div class="row paginator">
+			{% if products.has_previous %}
+		    <div class="col l6 m6 s6">
+		    	<a href="#!" class="left"><i class="fa fa-chevron-left"></i>&nbsp;Previous</a>
+		    </div>
+		    {% endif %}
+		    {% if products.has_next %}
+		    <div class="col l6 m6 s6">
+		    	<a href="#!" class="right">Next&nbsp;<i class="fa fa-chevron-right"></i></a>
+		    </div>
+		    {% endif %}
+		</div>
 	</div>
 	{% endblock %}
 {% block js %}

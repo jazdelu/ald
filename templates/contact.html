@@ -4,9 +4,9 @@
 <main>
 	{% block content %}
 	<div class="content container page" id ="contact">
-		<div class="banner valign-wrapper" style="background-image:url(/static/images/7.jpg);background-position:top;">
+		<div class="banner valign-wrapper" style="background-image:url({{ page.banner.url  }})">
 			<div class="page-title valign-wrapper">
-				<h4 class="valign">Contact</h4>
+				<h4 class="valign">{{ page.title }}</h4>
 			</div>
 		</div>
 		<div class="row">
@@ -15,9 +15,7 @@
 					Get In Touch
 				</div>
 				<div class="text">
-				<p>Phone:</p>
-				<p>Address</p>
-				<p>Email</p>
+					{{ page.content|linebreaksbr }}
 				</div>
 			</div>
 			<div class="col l6 m12 s12">

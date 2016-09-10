@@ -40,12 +40,12 @@
 		<div class="row paginator">
 			{% if products.has_previous %}
 		    <div class="col l6 m6 s6">
-		    	<a href="#!" class="left"><i class="fa fa-chevron-left"></i>&nbsp;Previous</a>
+		    	<a href="?page={{ products.previous_page_number }}" class="left"><i class="fa fa-chevron-left"></i>&nbsp;Previous</a>
 		    </div>
 		    {% endif %}
 		    {% if products.has_next %}
 		    <div class="col l6 m6 s6">
-		    	<a href="#!" class="right">Next&nbsp;<i class="fa fa-chevron-right"></i></a>
+		    	<a href="?page={{ products.next_page_number }}" class="right">Next&nbsp;<i class="fa fa-chevron-right"></i></a>
 		    </div>
 		    {% endif %}
 		</div>
